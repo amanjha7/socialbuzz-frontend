@@ -9,7 +9,7 @@
             </div>
             <ul class="nav flex-column">
                 <li *ngFor="let item of navItems" class="nav-item">
-                    <a class="nav-link" (click)="toggleDropdown(item)" [routerLink]="getFullRoute(item.link)">
+                    <a class="nav-link" (click)="openLeftPanel();toggleDropdown(item)" [routerLink]="getFullRoute(item.link)">
                         <i class="fa" [ngClass]="'fa-' + item.icon"></i>
                         <span *ngIf="!isCollapsed">{{ item.label }}</span>
                         <i class="fa" [ngClass]="{'fa-chevron-up': item.isOpen, 'fa-chevron-down': !item.isOpen}"

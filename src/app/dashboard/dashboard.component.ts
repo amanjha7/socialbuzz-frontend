@@ -112,4 +112,8 @@ export class DashboardComponent {
     if(this.router.url=='/dashboard') return true;
     return false;
   }
+
+  openLeftPanel(){
+    this.isCollapsed = false;
+  }
 }
