@@ -17,7 +17,6 @@ import { SecurityComponent } from '../shared/components/settings/security/securi
 import { AccountComponent } from '../shared/components/settings/account/account.component';
 import { NotificationComponent } from '../shared/components/notification/notification.component';
 import { PostListComponent } from '../shared/components/post-list/post-list.component';
-import { HomeComponent } from '../shared/components/home/home.component';
 import { MessagesComponent } from '../shared/components/messages/messages.component';
 
 const routes: Routes = [

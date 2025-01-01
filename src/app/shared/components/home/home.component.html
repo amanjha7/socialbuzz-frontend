@@ -1,71 +1,60 @@
 <div class="container py-4">
     <h1 class="text-center text-orange mb-4">All Posts</h1>
-  
+
     <div class="row">
-      <div
-        class="col-md-12 mb-4"
-        *ngFor="let post of posts"
-      >
-        <div class="post-tab shadow-sm p-4">
-          <!-- Post Title and Author -->
-          <h5 class="post-title">
-            <strong>By User:</strong> {{ post.authorName || post.author }}
-          </h5>
-          
-          <!-- Post Content -->
-          <p class="post-content">
-            {{ post.content }}
-          </p>
-  
-          <!-- Image (if any) -->
-          <img *ngIf="post.image_url" [src]="post.image_url" class="img-fluid" alt="Post Image" />
-  
-          <!-- Date of Post -->
-          <p class="text-muted mt-3">
-            Posted on: {{ post.created_at | date: 'medium' }}
-          </p>
-  
-          <!-- Like Button -->
-          <div class="d-flex justify-content-start">
-            <button class="btn btn-outline-orange" (click)="toggleLike(post._id)">
-              ❤️ Likes ({{ post.likes.length }})
-            </button>
-          </div>
-  
-          <!-- Comments Section -->
-          <div class="comments-section mt-4">
-            <button
-              class="btn btn-primary"
-              (click)="toggleComments(post._id)"
-            >
-              View Comments ({{ post.comments.length }})
-            </button>
-  
-            <!-- Comments List -->
-            <div *ngIf="post.showComments">
-              <div *ngFor="let comment of post.comments" class="comment">
-                <p><strong>{{ comment.authorName }}:</strong> {{ comment.content }}</p>
-              </div>
-  
-              <!-- Add New Comment Form -->
-              <div class="add-comment mt-3">
-                <textarea
-                  [(ngModel)]="post.newComment"
-                  class="form-control"
-                  rows="3"
-                  placeholder="Add a comment"
-                ></textarea>
-                <button
-                  class="btn btn-success mt-2"
-                  (click)="addComment(post._id)"
-                >
-                  Post Comment
-                </button>
-              </div>
+        <div class="col-md-12 mb-4" *ngFor="let post of posts">
+            <div class="post-tab shadow-sm p-4">
+                <!-- Post Title and Author -->
+                <h5 class="post-title">
+                    <strong>By User:</strong> {{ post.authorName || post.author }}
+                </h5>
+
+                <!-- Post Content -->
+                <p class="post-content">
+                    {{ post.content }}
+                </p>
+
+                <!-- Image (if any) -->
+                <img *ngIf="post.image_url" [src]="post.image_url" class="img-fluid" alt="Post Image" />
+
+                <!-- Date of Post -->
+                <p class="text-muted mt-3">
+                    Posted on: {{ post.created_at | date: 'medium' }}
+                </p>
+
+                <!-- Like Button -->
+                <div class="d-flex justify-content-start">
+                    <button class="btn btn-outline-orange" (click)="toggleLike(post._id)">
+                        ❤️ Likes ({{ post.likes.length }})
+                    </button>
+                </div>
+
+                <!-- Comments Section -->
+                <div class="comments-section mt-4">
+                    <button class="btn btn-primary" (click)="toggleComments(post._id)">
+                        View Comments ({{ post.comments.length }})
+                    </button>
+
+                    <!-- Comments List -->
+                    <div *ngIf="post.showComments">
+                        <div *ngFor="let comment of post.comments" class="comment">
+                            <p><strong>{{ comment.authorName }}:</strong> {{ comment.content }}</p>
+                        </div>
+
+                        <!-- Add New Comment Form -->
+                        <div class="add-comment mt-3">
+                            <textarea [(ngModel)]="post.newComment" class="form-control" rows="3"
+                                placeholder="Add a comment"></textarea>
+                            <button class="btn btn-success mt-2" (click)="addComment(post._id)">
+                                Post Comment
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
+        <div *ngIf="posts.length === 0">
+            <p class="text-center">No posts found.</p>
+        </div>
     </div>
-  </div>
-  
+</div>
