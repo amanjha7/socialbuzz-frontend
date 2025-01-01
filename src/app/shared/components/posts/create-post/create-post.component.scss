@@ -1,0 +1,61 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    color: #f56a00;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #f56a00;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:disabled {
+    background-color: #cccccc;
+  }
+  
+  button:hover:enabled {
+    background-color: #f39c00;
+  }
+  
+  textarea {
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 1rem;
+  }
+  
+  input {
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 1rem;
+  }
+  
+  .material-icons {
+    vertical-align: middle;
+  }
+  
+  .d-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .text-primary {
+    color: #007bff;
+  }
+  
+  .text-danger {
+    color: #dc3545;
+  }
+  

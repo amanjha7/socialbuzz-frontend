@@ -30,4 +30,9 @@ export class PostService {
     const url = `${this.apiUrl}/${postId}/comments`;
     return this.http.get<any[]>(url);
   }
+
+  // Method to create a new post
+  createPost(formData:any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/create`, formData);
+  }
 }
