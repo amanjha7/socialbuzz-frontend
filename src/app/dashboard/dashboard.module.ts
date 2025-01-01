@@ -26,6 +26,7 @@ import { PrivacyComponent } from '../shared/components/settings/privacy/privacy.
 import { SecurityComponent } from '../shared/components/settings/security/security.component';
 import { AccountComponent } from '../shared/components/settings/account/account.component';
 import { NotificationComponent } from '../shared/components/notification/notification.component';
+import { HomeComponent } from '../shared/components/home/home.component';
 
 
 
@@ -52,7 +53,8 @@ import { NotificationComponent } from '../shared/components/notification/notific
     PrivacyComponent,
     SecurityComponent,
     AccountComponent,
-    NotificationComponent
+    NotificationComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,

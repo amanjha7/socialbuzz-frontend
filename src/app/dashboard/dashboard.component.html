@@ -31,5 +31,8 @@
     <!-- Main content -->
     <div class="main-content">
         <router-outlet></router-outlet>
+        <div *ngIf="isinHome()">
+            <app-home></app-home>
+        </div>
     </div>
 </div>

@@ -107,4 +107,9 @@ export class DashboardComponent {
     // return currentUrl.endsWith('/') ? currentUrl + link : currentUrl + '/' + link;
     return '/dashboard' + link;
   }
+
+  isinHome(){
+    if(this.router.url=='/dashboard') return true;
+    return false;
+  }
 }
