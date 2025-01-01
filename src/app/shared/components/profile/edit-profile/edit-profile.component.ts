@@ -34,7 +34,6 @@ export class EditProfileComponent implements OnInit {
     this.userService.updateUserProfile(this.userProfile).subscribe(
       (response) => {
         console.log('Profile updated successfully', response);
-        this.router.navigate(['/profile']);
       },
       (error) => {
         console.error('Error updating profile:', error);

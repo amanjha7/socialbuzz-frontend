@@ -2,9 +2,9 @@
     <div class="profile-header text-center">
       <div class="profile-image">
         <!-- Check if profile picture exists -->
-        <div *ngIf="userProfile.profilePicture; else userInitial">
+        <div *ngIf="userProfile.profile_picture; else userInitial">
           <img
-            [src]="userProfile.profilePicture"
+            [src]="userProfile.profile_picture"
             alt="Profile Image"
             class="profile-img"
           />
