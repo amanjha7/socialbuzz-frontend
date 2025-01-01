@@ -1,0 +1,122 @@
+.profile-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-header {
+    padding-bottom: 20px;
+    border-bottom: 2px solid #eee;
+  }
+  
+  .profile-image {
+    margin-bottom: 15px;
+    display: inline-block;
+  }
+  
+  .profile-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  .profile-initial {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4caf50;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    border-radius: 50%;
+  }
+  
+  .profile-role {
+    font-size: 1.2rem;
+    color: #888;
+    font-weight: 500;
+    margin-top: 10px;
+  }
+  
+  .profile-name {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 10px 0;
+    color: #333;
+  }
+  
+  .profile-bio {
+    font-size: 1.2rem;
+    color: #777;
+  }
+  
+  .profile-info {
+    margin-top: 20px;
+  }
+  
+  .info-group {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .info-group strong {
+    color: #444;
+  }
+  
+  .info-group span {
+    color: #555;
+  }
+  
+  .followers-following {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .followers, .following {
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+  
+  .profile-footer {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .profile-footer p {
+    color: #888;
+    font-size: 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .profile-container {
+      padding: 15px;
+    }
+  
+    .profile-name {
+      font-size: 1.5rem;
+    }
+  
+    .profile-bio {
+      font-size: 1rem;
+    }
+  
+    .profile-footer p {
+      font-size: 0.9rem;
+    }
+  
+    .info-group {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  

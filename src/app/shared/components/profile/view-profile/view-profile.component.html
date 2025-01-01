@@ -1,1 +1,54 @@
-<p>view-profile works!</p>
+<div class="profile-container">
+    <div class="profile-header text-center">
+      <div class="profile-image">
+        <!-- Check if profile picture exists -->
+        <div *ngIf="userProfile.profilePicture; else userInitial">
+          <img
+            [src]="userProfile.profilePicture"
+            alt="Profile Image"
+            class="profile-img"
+          />
+        </div>
+        <ng-template #userInitial>
+          <!-- Display the user's initial in a circular background if profile picture is not available -->
+          <div class="profile-initial">
+            {{ userProfile.username[0] | uppercase }}
+          </div>
+        </ng-template>
+      </div>
+  
+      <h2 class="profile-name">{{ userProfile.username }}</h2>
+      <p class="profile-bio">{{ userProfile.bio || 'No bio available' }}</p>
+  
+      <!-- Display the user's role under the profile picture -->
+      <p class="profile-role">{{ userProfile.role || 'User' }}</p>
+    </div>
+  
+    <div class="profile-info">
+      <div class="info-group">
+        <strong>Email:</strong>
+        <span>{{ userProfile.email }}</span>
+      </div>
+  
+      <div *ngIf="userProfile.location" class="info-group">
+        <strong>Location:</strong>
+        <span>{{ userProfile.location }}</span>
+      </div>
+  
+      <div class="followers-following">
+        <div class="followers">
+          <strong>Followers:</strong>
+          <span>{{ userProfile.followers.length }}</span>
+        </div>
+        <div class="following">
+          <strong>Following:</strong>
+          <span>{{ userProfile.following.length }}</span>
+        </div>
+      </div>
+    </div>
+  
+    <div *ngIf="userProfile.created_at" class="profile-footer">
+      <p><strong>Joined:</strong> {{ userProfile.created_at | date: 'medium' }}</p>
+    </div>
+  </div>
+  
