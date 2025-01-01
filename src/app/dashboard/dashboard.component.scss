@@ -89,6 +89,8 @@
     flex-grow: 1;
     padding: 20px;
     background-color: #f8f9fa;
+    height: 100vh;
+    overflow: scroll;
   }
   
   .ms-3 {
@@ -99,7 +101,7 @@
     display: flex;
     flex-direction: row;
     height: 100vh;
-    
+
   }
 
   
