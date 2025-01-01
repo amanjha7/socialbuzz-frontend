@@ -5,14 +5,50 @@
         <label for="username">Username</label>
         <input id="username" type="text" [(ngModel)]="username" name="username" required class="form-control" />
       </div>
+      
       <div class="form-group">
         <label for="email">Email</label>
         <input id="email" type="email" [(ngModel)]="email" name="email" required class="form-control" />
       </div>
+      
       <div class="form-group">
         <label for="password">Password</label>
-        <input id="password" type="password" [(ngModel)]="password" name="password" required class="form-control" />
+        <div class="password-container position-relative">
+          <input 
+            id="password" 
+            [type]="isPasswordVisible ? 'text' : 'password'" 
+            [(ngModel)]="password" 
+            name="password" 
+            required 
+            class="form-control" 
+          />
+          <i 
+            class="fa" 
+            [ngClass]="isPasswordVisible ? 'fa-eye-slash' : 'fa-eye'" 
+            (click)="togglePasswordVisibility()" 
+            aria-hidden="true"></i>
+        </div>
       </div>
+  
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <div class="password-container position-relative">
+          <input 
+            id="confirmPassword" 
+            [type]="isConfirmPasswordVisible ? 'text' : 'password'" 
+            [(ngModel)]="confirmPassword" 
+            name="confirmPassword" 
+            required 
+            class="form-control" 
+          />
+          <i 
+            class="fa" 
+            [ngClass]="isConfirmPasswordVisible ? 'fa-eye-slash' : 'fa-eye'" 
+            (click)="toggleConfirmPasswordVisibility()" 
+            aria-hidden="true"></i>
+        </div>
+      </div>
+      <div *ngIf="confirmPassword!='' && password!==confirmPassword" class="error">confirm password does not match</div>
       <div *ngIf="successMessage" class="success">{{ successMessage }}</div>
       <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
       <button type="submit" class="btn btn-primary">Register</button>

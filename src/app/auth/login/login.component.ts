@@ -11,6 +11,7 @@ export class LoginComponent {
   email = '';
   password = '';
   errorMessage = '';
+  isPasswordVisible: boolean = false; 
 
   constructor(private authService: AuthService, private router: Router) {}
 
@@ -24,5 +25,9 @@ export class LoginComponent {
         this.errorMessage = 'Invalid email or password';
       }
     });
+  }
+
+  togglePasswordVisibility() {
+    this.isPasswordVisible = !this.isPasswordVisible;
   }
 }

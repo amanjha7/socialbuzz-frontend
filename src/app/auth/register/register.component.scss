@@ -55,3 +55,20 @@
     text-decoration: underline;
   }
   
+  .password-container {
+    position: relative;
+  }
+  
+  .password-container input {
+    padding-right: 40px; /* Space for the eye icon */
+  }
+  
+  .password-container i {
+    position: absolute;
+    right: 10px; /* Position the icon to the right */
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px; /* Icon size */
+  }
+  
