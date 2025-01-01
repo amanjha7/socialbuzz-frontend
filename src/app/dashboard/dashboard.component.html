@@ -1,5 +1,35 @@
-<div class="dashboard-container">
-    <h2>Welcome to the Dashboard</h2>
-    <p>Protected content goes here.</p>
-  </div>
-  
+<div class="dash-app">
+    <div class="left-nav">
+        <div class="sidebar" [ngClass]="{ 'collapsed': isCollapsed }">
+            <div class="sidebar-header">
+                <h3 *ngIf="!isCollapsed">My App</h3>
+                <button class="btn btn-link text-white" (click)="closeDropdown();toggleCollapse()">
+                    <i class="fa" [class.fa-arrow-right]="isCollapsed" [class.fa-arrow-left]="!isCollapsed"></i>
+                </button>
+            </div>
+            <ul class="nav flex-column">
+                <li *ngFor="let item of navItems" class="nav-item">
+                    <a class="nav-link" (click)="toggleDropdown(item)" [routerLink]="getFullRoute(item.link)">
+                        <i class="fa" [ngClass]="'fa-' + item.icon"></i>
+                        <span *ngIf="!isCollapsed">{{ item.label }}</span>
+                        <i class="fa" [ngClass]="{'fa-chevron-up': item.isOpen, 'fa-chevron-down': !item.isOpen}"
+                            *ngIf="item.subItems.length > 0"></i>
+                    </a>
+                    <ul *ngIf="item.isOpen && item.subItems?.length" class="nav flex-column ms-3">
+                        <li *ngFor="let subItem of item.subItems" class="nav-item">
+                            <a class="nav-link" [routerLink]="getFullRoute(subItem.link)">
+                                <i class="fa" [ngClass]="'fa-' + subItem.icon"></i>
+                                <span>{{ subItem.label }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Main content -->
+    <div class="main-content">
+        <router-outlet></router-outlet>
+    </div>
+</div>

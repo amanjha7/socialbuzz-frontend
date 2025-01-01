@@ -8,12 +8,15 @@ import { SharedModule } from './shared.module';
 import { AuthModule } from './auth/auth.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { TokenInterceptor } from './core/interceptors/token.interceptor';
+import { PostListComponent } from './shared/components/post-list/post-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PostListComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,9 @@ import { RouterModule } from '@angular/router';
     HttpClientModule,
     RouterModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true } // Register TokenInterceptor
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
