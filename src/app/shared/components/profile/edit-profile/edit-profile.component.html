@@ -1,1 +1,73 @@
-<p>edit-profile works!</p>
+<div class="edit-profile-container">
+    <h2 class="edit-profile-title">Edit Profile</h2>
+  
+    <div class="edit-profile-header text-center">
+      <div class="profile-image">
+        <div *ngIf="userProfile.profile_picture; else userInitial">
+          <img
+            [src]="userProfile.profile_picture"
+            alt="Profile Image"
+            class="profile-img"
+          />
+        </div>
+        <ng-template #userInitial>
+          <div class="profile-initial">
+            {{ userProfile.username[0] | uppercase }}
+          </div>
+        </ng-template>
+      </div>
+  
+      <h3 class="profile-name">{{ userProfile.username }}</h3>
+    </div>
+  
+    <!-- Profile Edit Form -->
+    <form (ngSubmit)="onSubmit()" class="edit-profile-form">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input
+          type="text"
+          id="username"
+          [(ngModel)]="userProfile.username"
+          name="username"
+          required
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          [(ngModel)]="userProfile.email"
+          name="email"
+          required
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="bio">Bio:</label>
+        <textarea
+          id="bio"
+          [(ngModel)]="userProfile.bio"
+          name="bio"
+          placeholder="Tell us about yourself"
+        ></textarea>
+      </div>
+  
+      <div class="form-group">
+        <label for="profile_picture">Profile Picture URL:</label>
+        <input
+          type="text"
+          id="profile_picture"
+          [(ngModel)]="userProfile.profile_picture"
+          name="profile_picture"
+          placeholder="Enter image URL"
+        />
+      </div>
+  
+      <div class="form-group">
+        <button type="submit" class="submit-btn">Save Changes</button>
+      </div>
+    </form>
+  </div>
+  

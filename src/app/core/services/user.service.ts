@@ -15,4 +15,8 @@ export class UserService {
       // Make the GET request to fetch the current user's profile
     return this.http.get<any>(`${this.apiUrl}/profile`);
   }
+
+  updateUserProfile(updatedData: any): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/profile`, updatedData);
+  }
 }

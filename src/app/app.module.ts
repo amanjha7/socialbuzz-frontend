@@ -12,11 +12,13 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { TokenInterceptor } from './core/interceptors/token.interceptor';
 import { PostListComponent } from './shared/components/post-list/post-list.component';
+import { ToastComponent } from './shared/components/toast/toast.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PostListComponent
+    PostListComponent,
+    ToastComponent
   ],
   imports: [
     BrowserModule,

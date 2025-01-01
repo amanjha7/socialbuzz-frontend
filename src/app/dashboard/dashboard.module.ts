@@ -4,7 +4,7 @@ import { DashboardComponent } from './dashboard.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { RouterModule } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PostComponent } from '../shared/components/post/post.component';
 import { UsersComponent } from '../shared/components/users/users.component';
 import { SettingsComponent } from '../shared/components/settings/settings.component';
@@ -61,7 +61,8 @@ import { HomeComponent } from '../shared/components/home/home.component';
     DashboardRoutingModule,
     RouterModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
   ]
 })
 export class DashboardModule { }
