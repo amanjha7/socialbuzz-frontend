@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PostModal } from 'src/app/core/models/post.model';
 import { PostService } from 'src/app/core/services/post.service'; // Import your PostService
 
 @Component({
@@ -7,7 +8,7 @@ import { PostService } from 'src/app/core/services/post.service'; // Import your
   styleUrls: ['./create-post.component.scss']
 })
 export class CreatePostComponent {
-  post = {
+  post:Partial<PostModal> = {
     content: '',
     hashtags: '',
     imageUrl: ''
@@ -30,7 +31,7 @@ export class CreatePostComponent {
     const formData = new FormData();
     formData.append('content', this.post.content);
     formData.append('hashtags', this.post.hashtags);
-    formData.append('image_url', this.post.imageUrl); // Add image URL
+    formData.append('image_url', this.post.imageUrl || ''); // Add image URL
 
     this.postService.createPost({content: this.post.content, hashtags: this.post.hashtags, image_url: this.post.imageUrl}).subscribe(
       (response) => {

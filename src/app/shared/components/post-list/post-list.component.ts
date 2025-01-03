@@ -64,4 +64,12 @@ export class PostListComponent implements OnInit {
       );
     }
   }
+
+  // accept string and array and return string
+  formatHashtags(hashtags: string[] | string): string {
+    if(Array.isArray(hashtags)){
+      return hashtags.join(', ');
+    }
+    return hashtags;
+  }
 }
