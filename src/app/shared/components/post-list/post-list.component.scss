@@ -1,0 +1,32 @@
+.post-tab {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .post-title {
+    font-size: 1.2rem;
+    color: #ff6f61; /* You can change this to your theme color */
+  }
+  
+  .post-content {
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .comments-section {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  .add-comment textarea {
+    width: 100%;
+    resize: none;
+  }
+  
+  .add-comment button {
+    width: 100%;
+  }
+  

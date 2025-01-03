@@ -1,6 +1,6 @@
 /* Webkit browsers (Chrome, Safari, Edge) */
 ::-webkit-scrollbar {
-    width: 6px; /* Slim scrollbar width */
+    width: 2px; /* Slim scrollbar width */
   }
   
   ::-webkit-scrollbar-thumb {
@@ -14,7 +14,7 @@
   
   ::-webkit-scrollbar-track {
     background: #f1f1f1; /* Track background */
-    border-radius: 10px;
+    border-radius: 5px;
   }
   
   
