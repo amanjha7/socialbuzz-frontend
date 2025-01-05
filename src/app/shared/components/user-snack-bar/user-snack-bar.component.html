@@ -1,0 +1,39 @@
+<div class="snackbar-container">
+    <div class="snackbar-header d-flex align-items-center justify-content-between">
+      <h5 class="snackbar-title">User List</h5>
+      <div class="search-bar position-relative">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search users..."
+          [(ngModel)]="searchTerm"
+          (input)="filterUsers()"
+        />
+        <i class="fa fa-search search-icon"></i>
+      </div>
+    </div>
+  
+    <div *ngIf="filteredUsers.length > 0; else noUsers" class="snackbar-body">
+      <ul class="list-group">
+        <li
+          *ngFor="let user of filteredUsers"
+          class="list-group-item d-flex align-items-center"
+        >
+          <img
+            [src]="user.profile_picture"
+            alt="Profile"
+            class="user-profile-pic"
+          />
+          <div class="user-info">
+            <p class="user-name">{{ user.username }}</p>
+            <p class="user-bio">{{ user.bio }}</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  
+    <ng-template #noUsers>
+      <p class="no-users-message">No users found.</p>
+    </ng-template>
+  </div>
+  

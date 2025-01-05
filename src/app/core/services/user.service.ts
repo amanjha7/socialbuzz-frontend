@@ -21,4 +21,12 @@ export class UserService {
   updateUserProfile(updatedData: any): Observable<any> {
     return this.http.put<any>(`${this.apiUrl}/profile`, updatedData);
   }
+
+  getFollowers(): Observable<any[]> {
+    return this.http.post<any[]>(`${this.apiUrl}/followers`, {});
+  }
+
+  getFollowing(): Observable<any[]> {
+    return this.http.post<any[]>(`${this.apiUrl}/following`, {});
+  }
 }

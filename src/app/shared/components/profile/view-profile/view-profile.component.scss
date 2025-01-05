@@ -96,6 +96,17 @@
     color: #888;
     font-size: 1rem;
   }
+
+  .popover-container {
+    z-index: 1050;
+    border: 1px solid #ccc;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 10px;
+    max-width: 300px;
+  }
+  
   
   @media (max-width: 768px) {
     .profile-container {

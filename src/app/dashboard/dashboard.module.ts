@@ -27,6 +27,7 @@ import { SecurityComponent } from '../shared/components/settings/security/securi
 import { AccountComponent } from '../shared/components/settings/account/account.component';
 import { NotificationComponent } from '../shared/components/notification/notification.component';
 import { HomeComponent } from '../shared/components/home/home.component';
+import { UserSnackBarComponent } from '../shared/components/user-snack-bar/user-snack-bar.component';
 
 
 
@@ -54,7 +55,8 @@ import { HomeComponent } from '../shared/components/home/home.component';
     SecurityComponent,
     AccountComponent,
     NotificationComponent,
-    HomeComponent
+    HomeComponent,
+    UserSnackBarComponent
   ],
   imports: [
     CommonModule,

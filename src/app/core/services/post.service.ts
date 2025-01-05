@@ -41,4 +41,8 @@ export class PostService {
   getMyPosts(): Observable<any[]> {
     return this.http.post<any[]>(`${this.apiUrl}/my-posts`, {});
   }
+
+  getFollowedUsersPosts(): Observable<any[]> {
+    return this.http.post<any[]>(`${this.apiUrl}/followed-posts`, {});
+  }
 }
