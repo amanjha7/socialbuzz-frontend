@@ -37,11 +37,12 @@
           <label for="imageUrl">Image URL</label>
           <button
             type="button"
-            class="btn btn-link"
+            class="btn btn-link mt-2"
             (click)="toggleImageInput()"
             [ngClass]="{ 'text-primary': !showImageInput, 'text-danger': showImageInput }"
+            [ngStyle]="{ color: showImageInput ? 'red' : 'blue', textDecoration: 'none' }"
           >
-            <span class="material-icons">add_circle_outline</span> + Add Image URL
+            <span class="text-white">+ Add Image URL</span> 
           </button>
         </div>
         <input
