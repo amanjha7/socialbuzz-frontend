@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/app/environments/environment.dev';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  private apiUrl = 'http://localhost:8080/api/user'; // Base URL for your API (adjust if needed)
+  // private apiUrl = 'http://localhost:8080/api/user'; // Base URL for your API (adjust if needed)
+  private apiUrl:string = environment.apiUrl + environment.userRoute;
 
   constructor(private http: HttpClient) {}
 
@@ -18,5 +20,10 @@ export class UserService {
 
   updateUserProfile(updatedData: any): Observable<any> {
     return this.http.put<any>(`${this.apiUrl}/profile`, updatedData);
+  }
+
+  //change password
+  changePassword(passwordData: any): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/change-password`, passwordData);
   }
 }
