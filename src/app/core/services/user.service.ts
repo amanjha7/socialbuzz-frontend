@@ -21,9 +21,4 @@ export class UserService {
   updateUserProfile(updatedData: any): Observable<any> {
     return this.http.put<any>(`${this.apiUrl}/profile`, updatedData);
   }
-
-  //change password
-  changePassword(passwordData: any): Observable<any> {
-    return this.http.put<any>(`${this.apiUrl}/change-password`, passwordData);
-  }
 }

@@ -3,5 +3,6 @@ export const environment = {
     production: false,
     apiUrl: 'http://localhost:8080/api',
     userRoute: '/user',
-    postRoute: '/post'
+    postRoute: '/post',
+    authRoute: '/auth'
 };
